@@ -74,32 +74,30 @@ const title = document.querySelector('.title');
 // 	},
 // });
 
-// const tl = gsap.timeline();
-
-// tl.from(title, 0.5, {
-// 	x: 500,
-// });
-// tl.from(items, 0.5, {
-// 	y: 500,
-// 	opacity: 1,
-// });
-// tl.add('titleAppear', '+=1');
-// tl.from(
-// 	title,
-// 	0.5,
-// 	{
-// 		y: 500,
-// 	},
-// 	'+=1'
-// );
-// tl.to(
-// 	title,
-// 	0.5,
-// 	{
-// 		y: 500,
-// 		opacity: 0,
-// 	},
-// 	'titleAppear'
-// );
-
 const tl = gsap.timeline();
+
+tl.from(title, 0.5, {
+	x: 500,
+});
+tl.from(items, 0.5, {
+	y: 500,
+	opacity: 1,
+});
+tl.add('titleAppear', '+=1');
+tl.from(
+	title,
+	0.5,
+	{
+		y: 500,
+	},
+	'+=1'
+);
+tl.to(
+	title,
+	0.5,
+	{
+		y: 500,
+		opacity: 0,
+	},
+	'titleAppear'
+);
