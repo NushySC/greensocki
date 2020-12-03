@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: rgb(139, 216, 203);
+}
+
+.square-ball {
+	background: #faf49e;
+	border: 8px solid #b988e2;
+	width: 4rem;
+	height: 4rem;
+}
