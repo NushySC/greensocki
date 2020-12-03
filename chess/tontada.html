@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		<title>Load</title>
+	</head>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background: black;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		text {
+			font-family: 'Creepster', cursive;
+		}
+	</style>
+
+	<body>
+		<svg
+			width="1200px"
+			height="600px"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 100 100"
+		>
+			<text
+				class="load"
+				x="50"
+				y="50"
+				fill="none"
+				text-anchor="middle"
+				stroke="#c40707"
+				stroke-width="1.2"
+				stroke-dasharray="181"
+				stroke-dashoffset="181"
+				font-size="20px"
+				font-family="arial"
+			>
+				<tspan x="50">Voy a matarte</tspan>
+				<tspan y="70" x="50">mientras duermes,</tspan>
+				<tspan y="90" x="50">Bascuñana!</tspan>
+			</text>
+		</svg>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+		<script>
+			const load = document.querySelector('.load');
+
+			gsap.to(load, 3, {
+				strokeDashoffset: 0,
+				ease: Sine.easeIn,
+				repeat: -1,
+			});
+		</script>
+	</body>
+</html>
