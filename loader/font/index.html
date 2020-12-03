@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Font</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+	</head>
+
+	<body>
+		<svg
+			width="90vw"
+			height="90vh"
+			xmlns="http://www.w3.org/2000/svg"
+			viewbox="0 0 100 100"
+		>
+		<filter id="glow">
+			<feFlood flood-color="rgb(255,255,128)" flood-opacity="0.3" in="SourceGraphic" />
+			<feComposite operator="in" in2="SourceGraphic" />
+			<feGaussianBlur stdDeviation="3" />
+			<feComponentTransfer result="glow1">
+			  <feFuncA type="linear" slope="2" intercept="0" />
+			</feComponentTransfer>
+			<feMerge>
+			   <feMergeNode in="glow1" />
+			   <feMergeNode in="SourceGraphic" />
+			</feMerge>
+		  </filter>
+		
+			<text
+			    y="40"
+				class="load"			
+				fill="none"
+				text-anchor="middle"
+				stroke="#dfb732"
+				stroke-width="1"
+				stroke-dasharray="300"
+				stroke-dashoffset="300"
+				stroke-linecap="round"
+				font-size="1.5rem"
+				font-family="Roboto Slab", serif;
+				filter: url(#glow);
+			>
+			<tspan x="50" dy=".6em">Пролетарии всех стран,</tspan>
+			<tspan x="50" dy="1.2em"> соединяйтесь!</tspan>
+		
+			
+			</text>
+			
+		</svg>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
