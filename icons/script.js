@@ -22,7 +22,7 @@ const stick = document.getElementById('stick');
 const right = document.getElementById('right');
 const left = document.getElementById('left');
 
-// const tl = new TimelineMax({ repeat: -1, yoyo: true });
+// const tl = new gsap.timeline({ repeat: -1, yoyo: true }); If you use yoyo true, you dont't need to write the to part.
 const tl = new gsap.timeline({repeat: -1});
 
 tl.from(stick, 2, {transformOrigin: 'center center', rotation: 25}, 'first')
