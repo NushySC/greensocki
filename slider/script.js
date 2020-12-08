@@ -4,23 +4,21 @@ const btnBack = document.querySelector('.slider__arrows--left');
 
 const slider = {
 	currentItem: 0,
+
 	init: () => {
 		slider.in(slider.currentItem);
 	},
+
 	in: (index) => {
 		const sliderItem = sliderItems[index];
 		const texts = sliderItem.querySelectorAll('p');
-		// gsap.set(sliderItems[0], {scale: 0.3});
-		gsap.set(sliderItem, {scale: 0.3});
+		gsap.set(sliderItem, {scale: 0});
 		gsap.set(sliderItem, {left: '-100vw'});
-
 		const timeline = gsap.timeline();
+
 		timeline
-			.to(sliderItem, 0.5, {
-				left: 0,
-				delay: 0.5,
-				scale: 1,
-			})
+			.to(sliderItem, 0.5, {left: 0})
+			.to(sliderItem, 0.5, {scale: 1})
 			.from(texts, 1, {
 				autoAlpha: 0,
 				ease: Back.easeOut,
@@ -30,11 +28,12 @@ const slider = {
 				},
 			});
 	},
+
 	out: (index, nextIndex) => {
 		const sliderItem = sliderItems[index];
 		const texts = sliderItem.querySelectorAll('p');
-		const timelineOut = gsap.timeline();
-		timelineOut
+		const timeline = gsap.timeline();
+		timeline
 			.to(sliderItem, 0.5, {
 				left: '100vw',
 				delay: 0.5,
@@ -50,8 +49,9 @@ const slider = {
 				},
 			})
 			.call(slider.in, [nextIndex], this, '-=1.5')
-			.set(texts, {clearProps: 'all'});
+			.set([texts, sliderItem], {clearProps: 'all'});
 	},
+
 	next: () => {
 		const next =
 			slider.currentItem !== sliderItems.length - 1
@@ -59,22 +59,17 @@ const slider = {
 				: 0;
 		slider.out(slider.currentItem, next);
 		slider.currentItem = next;
-		console.log(currentItem, next);
 	},
+
 	back: () => {
-		const back =
+		const prev =
 			slider.currentItem > 0
 				? slider.currentItem - 1
 				: sliderItems.length - 1;
-
-		slider.out(slider.currentItem, back);
-		slider.currentItem = back;
-
-		console.log(back);
+		slider.out(slider.currentItem, prev);
+		slider.currentItem = prev;
 	},
 };
-
-// slider.in(0);
 
 // Events
 btnNext.addEventListener('click', slider.next);
