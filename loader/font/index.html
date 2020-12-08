@@ -14,19 +14,19 @@
 			width="90vw"
 			height="90vh"
 			xmlns="http://www.w3.org/2000/svg"
-			viewbox="0 0 100 100"
+			viewbox="0 0 120 120"
 		>
 		<filter id="glow">
-			<feFlood flood-color="rgb(255,255,128)" flood-opacity="0.3" in="SourceGraphic" />
-			<feComposite operator="in" in2="SourceGraphic" />
-			<feGaussianBlur stdDeviation="3" />
-			<feComponentTransfer result="glow1">
-			  <feFuncA type="linear" slope="2" intercept="0" />
-			</feComponentTransfer>
-			<feMerge>
-			   <feMergeNode in="glow1" />
-			   <feMergeNode in="SourceGraphic" />
-			</feMerge>
+			<feflood flood-color="rgb(255,255,128)" flood-opacity="0.3" in="SourceGraphic" />
+			<fecomposite operator="in" in2="SourceGraphic" />
+			<fegaussianblur stdDeviation="3" />
+			<fecomponenttransfer result="glow1">
+			  <fefunca type="linear" slope="2" intercept="0" />
+			</fecomponenttransfer>
+			<femerge>
+			   <femergenode in="glow1" />
+			   <femergenode in="SourceGraphic" />
+			</femerge>
 		  </filter>
 		
 			<text
