@@ -1,101 +1,59 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	font-family: 'Hammersmith One', sans-serif;
+	background-color: #1a1a1a;
 }
 
-body {
-	background-color: #000;
+h1 {
+	font-family: 'Hammersmith One', sans-serif;
+	font-weight: 100;
+	text-align: center;
+	margin-bottom: 50px;
+	color: whitesmoke;
 }
-.attri {
-	font-size: 0.5rem;
-	color: grey;
+
+.drag-container {
+	border-radius: 50%;
+	border: 2px solid whitesmoke;
+	border-bottom: 0;
+	border-right: 0;
+	border-left: 0;
 }
-.slider {
-	font-family: 'Open Sans Condensed', sans-serif;
-	width: 100vw;
-	height: 100vh;
+
+.drag-interaction {
 	position: relative;
-	overflow: hidden;
+	width: 150px;
+	height: 150px;
 }
 
-.slider__item {
+.drag {
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: -100vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-size: cover;
-	background-position: center center;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%) translateX(-50%);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #21d40a;
 }
 
-.slider__item:nth-child(1) {
-	background-image: url(./images/1.jpg);
-}
-.slider__item:nth-child(2) {
-	background-image: url(./images/2.jpg);
-}
-.slider__item:nth-child(3) {
-	background-image: url(./images/3.jpg);
+.price-text {
+	font-size: 24px;
+	letter-spacing: 0.1em;
+	color: #21d40a;
+	font-weight: 100;
 }
 
-.slider__text {
-	font-size: 3rem;
-	text-align: center;
-	color: #fff;
-	text-shadow: 2px 2px #666;
-}
-
-.slider__text p:first-child {
-	font-size: 6rem;
-}
-
-.slider__text p {
-	line-height: 5rem;
-}
-
-.slider__arrows {
-	position: absolute;
-	z-index: 999;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.slider__arrows--left,
-.slider__arrows--right {
-	border: none;
-	margin: 0;
-	text-decoration: none;
-	font-family: sans-serif;
-	text-align: center;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	background-color: transparent;
-	color: #fff;
-	text-shadow: 1px 1px #666;
-	font-size: 3.5rem;
-	padding: 0 2rem;
-	cursor: pointer;
-	transition: all 0.5s, opacity 0.5s;
-}
-
-.slider__arrows--left:hover {
-	opacity: 0.6;
-	transform: translateX(-5px);
-}
-
-.slider__arrows--right:hover {
-	opacity: 0.6;
-	transform: translateX(5px);
-}
-
-.slider__arrows--right:focus,
-.slider__arrows--left:focus {
-	outline: thin dashed rgba(255, 255, 255, 0.651);
-	outline-offset: -4px;
+.price {
+	font-weight: 700;
+	color: whitesmoke;
 }
