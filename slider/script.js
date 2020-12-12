@@ -7,8 +7,9 @@ const minRotation = 0;
 const maxRotation = 180;
 
 const onDrag = () => {
+	console.log(info);
 	price.innerText = (
-		Info.rotation *
+		info.rotation *
 		(maxVal / maxRotation)
 	).toLocaleString('es-ES', {style: 'currency', currency: 'EUR'});
 };
@@ -22,6 +23,6 @@ Draggable.create(drag, {
 	onDrag: onDrag,
 });
 
-const Info = Draggable.get(drag);
+const info = Draggable.get(drag);
 
 onDrag();

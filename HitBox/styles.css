@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: rgb(171, 172, 172);
+	display: flex;
+}
+
+.container {
+	flex: 80%;
+}
+
+.folder {
+	max-width: 120px;
+	padding: 3%;
+	position: relative;
+	z-index: 2;
+}
+
+.trash {
+	background: url('./images/empty-trash.png');
+	width: 128px;
+	height: 128px;
+	position: absolute;
+	bottom: 80px;
+	right: 40px;
+	z-index: 1;
+}
+
+.trash.is-full {
+	background: url('./images/full-trash.png');
+}
+
+#empty {
+	position: absolute;
+	bottom: 20px;
+	right: 40px;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 10px;
+	background-color: rgb(235, 235, 235);
+	box-shadow: 2px 2px 2px gray;
+	border: 0 solid transparent;
+}
